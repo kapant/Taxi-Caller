@@ -3,8 +3,6 @@
     <input pattern = "(hi|hello) *">
       <output value = "Hi!"/>
     </input>
-  </context>
-  <context>
     <input pattern = "(how) * (you) *">
       <output value = "I'm fine!"/>
     </input>
