@@ -1,8 +1,8 @@
 <context>
   <input>
-    <pattern="(hi|hello) *">
+    <pattern="(hi|hello) *"/>
       <output value="Hi!"/>
-    <pattern value="(what time is it?) *">
+    <pattern value="(what time is it?) *"/>
       <var name="MyVar" value="javascript: new Date().getTime()"/>
       <output value = "Time is $MyVar"/>
   </input>
