@@ -2,7 +2,7 @@
   <input pattern="(hi|hello) *">
     <output value="Hi!"/>
   </input>
-  <input pattern="(what time) * (?) *">
+  <input pattern="(what time is it?">
     <var name = "Time">
        <script>
          var date = new Date();
