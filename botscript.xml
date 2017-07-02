@@ -20,12 +20,13 @@
 		</var>
 		<output value = "Сейчас $Time"/>
 	</input>
-	<input pattern = "(найди) [&Mark]">
+	<input pattern = "(найди) $Mark">
 		<var name = "Address">
 			<script src = "https://api-maps.yandex.ru/2.1/lang=ru_RU">
 				var place = ymaps.geocode($Mark);
 				place.getAddressLine();
 			</script>
 		</var>
+		<output value = "$Address"/>
 	</input>
 </context>
