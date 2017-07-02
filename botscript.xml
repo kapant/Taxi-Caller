@@ -23,7 +23,7 @@
 	<input pattern = "(найди)$Text">
 		<var name = "Mark" value = "$Text"/>
 		<var name = "Address">
-			<script src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU">
+			<script src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU" type = "text/javascript">
 				ymaps.ready();
 				var place = ymaps.geocode("Саратов");
 				place.getAddressLine();
