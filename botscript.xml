@@ -1,9 +1,9 @@
 <context>
-  <input pattern="(hi|hello) *">
-    <output value="Hi!"/>
-  </input>
-  <input pattern="(what time is it?) *">
-    <var name="MyVar" value="javascript: new Date().getTime()"/>
-    <output value = "Time is $MyVar"/>
+  <input>
+    <pattern="(hi|hello) *">
+      <output value="Hi!"/>
+    <pattern value="(what time is it?) *">
+      <var name="MyVar" value="javascript: new Date().getTime()"/>
+      <output value = "Time is $MyVar"/>
   </input>
 </context>
