@@ -1,0 +1,6 @@
+<context>
+  <pattern name="Fruit" value="(apple*|orange*)"/> <!-- A general pattern -->
+  <input>
+    <pattern value="* (want|wanna) * $Fruit"/> <!-- Uses the general pattern -->
+  </input>
+</context>
