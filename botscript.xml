@@ -1,9 +1,14 @@
-<context>
-  <input>
-    <pattern value="(hi|hello) *"/>
-      <output value="Hi!"/>
-    <pattern value="(what time is it?) *"/>
-      <var name="MyVar" value="javascript: new Date().getTime()"/>
-      <output value = "Time is $MyVar"/>
+<context> <!-- A regular context -->
+  <input id="greeting" pattern="* remind [me] [to] $Text">
+    <output value="Done!" if="full($Text)"/>
+
+    <context if="empty($Text)" modal="true"> <!-- A modal context -->
+      <output value="What would you like me to remind you about?"/>
+
+      <input pattern="$Text">
+        <output value="Done!"/>
+      </input>
+
+    </context>
   </input>
 </context>
