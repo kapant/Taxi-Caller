@@ -1,12 +1,12 @@
 <context> <!-- A regular context -->
-    <input pattern = "(hi|hello) *" id = "hi/hello">
+    <input pattern = "(привет) *" id = "hi/hello">
       <context id = "greetings">
-        <output value = "Hi!"/>
+        <output value = "Привет!"/>
       </context>
     </input>
-    <input pattern = "(how) * (you) *" id = "feels">
+    <input pattern = "(как) * (дела) *" id = "feels">
 	  <context id = "feeling">
-		<output value = "I'm fine!"/>
+		<output value = "Все норм)"/>
 	  </context>
     </input>
 </context>
