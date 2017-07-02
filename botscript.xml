@@ -1,10 +1,8 @@
 <context> <!-- A regular context -->
-  <context>
     <input pattern = "(hi|hello) *">
       <output value = "Hi!"/>
     </input>
     <input pattern = "(how) * (you) *">
       <output value = "I'm fine!"/>
     </input>
-  </context>
 </context>
