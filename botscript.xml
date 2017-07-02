@@ -1,6 +1,6 @@
 <context>
   <input>
-    <pattern="(hi|hello) *"/>
+    <pattern value="(hi|hello) *"/>
       <output value="Hi!"/>
     <pattern value="(what time is it?) *"/>
       <var name="MyVar" value="javascript: new Date().getTime()"/>
