@@ -22,6 +22,7 @@
 	</input>
 	<input pattern = "инфа">
 		<get url = "https://api.telegram.org/bot409639273:AAHL6W-utcg_GbqbXkP-w5Hq_A9y_4PaKtc/getMe" var = "Name">
+			<param name = "first" value = "first_name"/>
 		</get>
 		<output value = "$Name"/>
 	</input>
