@@ -2,6 +2,8 @@
   <input pattern="(hi|hello) *">
     <output value="Hi!"/>
   </input>
+</context>
+<context>
   <input value="what time is it?">
     <var name = "Time">
        <script>
