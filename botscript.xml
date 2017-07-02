@@ -1,14 +1,9 @@
 <context> <!-- A regular context -->
-  <input id="greeting" pattern="* remind [me] [to] $Text">
-    <output value="Done!" if="full($Text)"/>
-
-    <context if="empty($Text)" modal="true"> <!-- A modal context -->
-      <output value="What would you like me to remind you about?"/>
-
-      <input pattern="$Text">
-        <output value="Done!"/>
-      </input>
-
-    </context>
+  <input pattern = "(hi|hello) *">
+    <output value = "Hi!"/>
   </input>
+  <context>
+    <input pattern = "(how) * (you) *">
+      <output value = "I'm fine!"/>
+  </context>
 </context>
