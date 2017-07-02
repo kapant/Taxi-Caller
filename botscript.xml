@@ -1,1 +1,5 @@
-<output value="Hi!"/>
+<context>
+  <input pattern="">
+    <output value="Hi!"/>
+  </input>
+</context>
