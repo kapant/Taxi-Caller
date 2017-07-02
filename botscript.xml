@@ -20,14 +20,8 @@
 		</var>
 		<output value = "Сейчас $Time"/>
 	</input>
-	<input pattern = "(найди)$Text">
-		<var name = "Mark" value = "$Text"/>
-		<var name = "Address">
-			<script src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU" type = "text/javascript"></script>
-			<script>
-				ymaps.ready();
-			</script>
-		</var>
-		<output value = "$Address"/>
+	<input pattern = "инфа">
+		<script src = "https://api.telegram.org/bot409639273:AAHL6W-utcg_GbqbXkP-w5Hq_A9y_4PaKtc/getMe">
+		</script>
 	</input>
 </context>
