@@ -20,7 +20,8 @@
 		</var>
 		<output value = "Сейчас $Time"/>
 	</input>
-	<input pattern = "(найди)$Mark">
+	<input pattern = "(найди)$Text">
+		<var name = "Mark" value = "$Text"/>
 		<var name = "Address">
 			<script src = "https://api-maps.yandex.ru/2.1/lang=ru_RU">
 				var place = ymaps.geocode("Саратов");
