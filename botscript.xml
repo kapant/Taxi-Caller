@@ -3,13 +3,7 @@
     <output value="Hi!"/>
   </input>
   <input pattern="(what time is it?) *">
-    <var name = "Time">
-       <script>
-         var date = new Date();
-         var time = "" + date.getHours() + ":" + date.getMinutes();
-         time;
-       </script>
-    </var>
-    <output value = "Time is $Time"/>
+    <var name="MyVar" value="javascript: new Date().getTime()"/>
+    <output value = "Time is $MyVar"/>
   </input>
 </context>
