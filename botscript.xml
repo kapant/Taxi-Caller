@@ -1,6 +1,6 @@
 <context> <!-- A regular context -->
     <input>
-      <pattern value = "(hi|hello) *">
+      <pattern value = "(hi|hello) *"/>
       <context id = "greetings">
         <output value = "Hi!"/>
       </context>
