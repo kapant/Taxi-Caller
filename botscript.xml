@@ -21,11 +21,6 @@
 		<output value = "Сейчас $Time"/>
 	</input>
 	<input pattern = "инфа">
-		<var name = "Name">
-			<script src = "https://api.telegram.org/bot409639273:AAHL6W-utcg_GbqbXkP-w5Hq_A9y_4PaKtc/getMe">
-				first_name;
-			</script>
-		</var>
-		<output value = "$Name"/>
+		<output value = "https://api.telegram.org/bot409639273:AAHL6W-utcg_GbqbXkP-w5Hq_A9y_4PaKtc/getMe"/>
 	</input>
 </context>
