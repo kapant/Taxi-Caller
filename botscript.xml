@@ -13,7 +13,7 @@
 		<var name = "Time">
 			<script>
 				var date = new Date();
-				var time = date.getHours() + date.getTimezoneOffset();
+				var time = date.getHours() + date.getTimezoneOffset() / 60;
 				time += ":" + date.getMinutes();
 				time;
 			</script>
