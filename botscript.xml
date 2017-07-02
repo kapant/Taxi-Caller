@@ -26,6 +26,6 @@
 				result.first_name;
 			</script>
 		</var>
-		<output value = "$Name">
+		<output value = "$Name"/>
 	</input>
 </context>
