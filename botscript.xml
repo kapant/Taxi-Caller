@@ -1,7 +1,9 @@
 <context> <!-- A regular context -->
+  <context id = "greetings">
     <input pattern = "(hi|hello) *">
       <output value = "Hi!"/>
     </input>
+  </context>
     <input pattern = "(how) * (you) *">
       <output value = "I'm fine!"/>
     </input>
