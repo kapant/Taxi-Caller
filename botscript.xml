@@ -4,7 +4,9 @@
         <output value = "Hi!"/>
       </context>
     </input>
-    <input pattern = "(how) * (you) *">
-      <output value = "I'm fine!"/>
+    <input pattern = "(how) * (you) *" id = "feels">
+	  <context id = "feeling">
+		<output value = "I'm fine!"/>
+	  </context>
     </input>
 </context>
