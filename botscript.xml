@@ -9,7 +9,7 @@
 				<context id = "done"/>
 			</input>
 		</context>
-		<context if = "empty($To)" modal = "true">
+		<context if = "empty($To)" modal = "true" id = "empty_to">
 			<output value = "Куда едем?"/>
 			<input pattern = "$To">
 				<context id = "done"/>
