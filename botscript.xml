@@ -1,5 +1,5 @@
 <context>
-  <var name = "From" value = ""/>
+  <var name = "From" value = "$Text"/>
   <pattern name = "From" value = ""/>
   <input pattern="* такси $From">
     <output value = "$From"/>
