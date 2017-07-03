@@ -1,5 +1,7 @@
 <context>
-  <input pattern="* такси $From">
+  <var name = "From" value = "">
+    <input pattern="* такси $From">
     
-  </input>
+    </input>
+   </var>
 </context>
