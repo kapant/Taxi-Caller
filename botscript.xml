@@ -1,19 +1,23 @@
 <context>
-  <input pattern="(hi|hello) *">
+  <input pattern="* remind* [me] {[[to] $Text] [$Date] [$Time]}">
+    <!-- Here Zenbot has created a set of variables for Text, Date and Time -->
 
-  <!-- Greet user if bot already knows the name -->
-  <output value="Hello $UserName" if="full($UserName)"/>
+    <!-- But we have to check if all required of them are defined in user's phrase -->
+    <output value="Your event is created." if="full($Text) and full($Time)"/>
 
-  <context if="empty($UserName)">
-    <!-- Ask user about her name -->
-    <output value="Hi! What is your name?"/>
+    <context if="empty($Text)" modal="true">
+      <output value="What do you like I remind you?"/>
+      <input pattern="$Text">
+        <!-- Jump to the DateTime context to ask about time and date -->
+        <context id="DateTime" if="empty($Time)"/>
 
-    <input pattern="$Text">
-      <!-- Store UserName variable with "user" scope -->
-      <var name="UserName" value="$Text" scope="user"/>
+        <!-- Or create event here if Time was defined -->
+        <output value="Ok! Your event is created." if="full($Time)"/>
+      </input>
+    </context>
 
-      <output value="Nice to meet you $UserName!"/>
-      <context/> <!-- Jump to the root context while this context is not modal -->
-    </input>
-  </context>
+    <context id="DateTime" if="empty($Time)" modal="true">
+      <!-- Ask about time and date here to complete event creation -->
+    </context>
+  </input>
 </context>
