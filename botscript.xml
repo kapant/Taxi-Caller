@@ -3,7 +3,7 @@
 		<output value = "Описание"/>
 	</input>
 	<var name = "From">
-		<input pattern = "* (такси) * &From">
+		<input pattern = "* (такси) * $From">
 			<output value = "$From"/>
 		</input>
 	</var>
