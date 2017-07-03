@@ -20,14 +20,10 @@
 		</var>
 		<output value = "Сейчас $Time"/>
 	</input>
-	<input pattern="* (погод*)">
-  <get url="http://api.openweathermap.org/data/2.5/weather" var="Weather">
-    <param name="APPID" value="API_KEY"/>
-    <param name="units" value="metric"/>
-    <param name="lat" value="$UserLatitude"/>
-    <param name="lon" value="$UserLongitude"/>
-  </get>
-
-  <output value='get("temp", get("main", $Weather))'/>
-</input>
+	<input pattern = "инфа">
+		<get url = "https://api.telegram.org/bot409639273:AAHL6W-utcg_GbqbXkP-w5Hq_A9y_4PaKtc/getMe" var = "Info">
+			
+		</get>
+		<output value = "$Info"/>
+	</input>
 </context>
