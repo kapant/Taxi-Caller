@@ -2,7 +2,8 @@
 	<input pattern = "(/start)">
 		<output value = "Описание"/>
 	</input>
-	<input pattern = "* (такси) * [(от|с) [$From]] * [(до|к) [$To]]">
-		
+	<input pattern = "* (такси) * { [(от|с) [$From]] * [(до|к) [$To]] }">
+		<var name = "From" value = ""/>
+		<var name = "To" value = ""/>
 	</input>
 </context>
