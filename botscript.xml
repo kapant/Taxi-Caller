@@ -23,7 +23,8 @@
 	<input pattern = "инфа">
 		<var name = "Out">
 			<script>
-				"Есть";
+				var str = "Есть";
+				str;
 			</script>
 		</var>
 		<output value = "$name"/>
