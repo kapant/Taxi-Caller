@@ -4,7 +4,9 @@
   <input pattern = "* такси * { [(от|с) [$From]] * [(до|к) [$To]] }">
   <context if = "empty($From)">
 			<output value = "Откуда едем?"/>
-			<input pattern = "$From"/>
+			<input pattern = "$From">
+				<output value = "From"/>
+			</input>
 		</context>
 		<context if = "empty($To)">
 			<output value = "Куда едем?"/>
