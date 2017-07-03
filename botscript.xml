@@ -1,14 +1,18 @@
 <context>
-  <pattern name = "From" value = "$Text"/>
-  <pattern name = "To" value = "$Text"/>
-  <input pattern = "* такси * { [(от|с) [$From]] * [(до|к) [$To]] }">
-  <context if = "empty($From)" modal = "true">
+	<pattern name = "From" value = "$Text"/>
+	<pattern name = "To" value = "$Text"/>
+	<input pattern = "* такси * { [(от|с) [$From]] * [(до|к) [$To]] }">
+  		<context if = "empty($From)" modal = "true" id = "empty_from">
 			<output value = "Откуда едем?"/>
-			<input pattern = "$From"/>
+			<input pattern = "$From">
+				<context id = "empty_from"/>
+			</input>
 		</context>
-		<context if = "empty($To)" modal = "true">
+		<context if = "empty($To)" modal = "true" id = "empty_to">
 			<output value = "Куда едем?"/>
-			<input pattern = "$To"/>
+			<input pattern = "$To">
+				<context id = "empty_to"/>
+			</input>
 		</context>
 		<output value = "Нужно такси от $From до $To, верно?"/>
 	</input>
