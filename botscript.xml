@@ -2,8 +2,5 @@
 	<input pattern = "(/start)">
 		<output value = "Описание"/>
 	</input>
-	<input pattern = "* (такси) * $From">
-		<var name = "From"/>
-		<output value = "$From"/>
-	</input>
+	
 </context>
