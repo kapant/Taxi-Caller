@@ -1,6 +1,6 @@
 <context>
   <var name = "From" value = ""/>
-  <input pattern="* такси">
+  <input pattern="* такси ">
     <output value = "$From"/>
   </input>
 </context>
