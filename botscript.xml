@@ -2,7 +2,7 @@
 	<input pattern = "(/start)">
 		<output value = "Описание"/>
 	</input>
-		<input pattern = "* (такси) * $From">
+		<input pattern = "* (такси) $From">
 			<output value = "$From"/>
 		</input>
 </context>
