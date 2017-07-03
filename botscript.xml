@@ -1,5 +1,5 @@
 <context> <!-- A regular context -->
-	<input pattern = "/start">
+	<input pattern = "(/start)">
 		<output value = "Описание">
 	</input>
     <input pattern = "(привет) *" id = "hi/hello">
