@@ -2,10 +2,17 @@
 	<input pattern = "(/start)">
 		<output value = "Описание"/>
 	</input>
-	<var name = "From" value = ""/>
-	<var name = "To" value = ""/>
 	<input pattern = "* (такси) * [(от|с) [$From]] * [(до|к) [$To]]">
-		
+		<var name = "From" value = ""/>
+		<var name = "To" value = ""/>
+		<context if = "empty($From)">
+			<output value = "Откуда едем?"/>
+			<input pattern = "$From"/>
+		</context>
+		<context if = "empty($To)">
+			<output value = "Куда едем?"/>
+			<input pattern = "$To"/>
+		</context>
 		<output value = "Нужно такси от $From до $To, верно?"/>
 	</input>
 </context>
