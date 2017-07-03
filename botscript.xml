@@ -2,8 +2,6 @@
 	<input pattern = "(/start)">
 		<output value = "Описание"/>
 	</input>
-	<var name = "From" value = "" scope = "input"/>
-	<var name = "To" value = "" scope = "input"/>
 	<input pattern = "* (такси) * [(от|с) [$From]] * [(до|к) [$To]]">
 		
 	</input>
