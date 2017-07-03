@@ -7,15 +7,11 @@
     <input pattern = "* (такси) * [(от|с) [$From]] * [(до|к) [$To]]">
 		<context if = "empty($From)">
 			<output value = "Откуда едем?"/>
-			<context>
-				<input pattern = "$From"/>
-			</context>
+			<input pattern = "$From"/>
 		</context>
 		<context if = "empty($To)">
 			<output value = "Куда едем?"/>
-			<context>
-				<input pattern = "$To"/>
-			</context>
+			<input pattern = "$To"/>
 		</context>
 		<output value = "Нужно такси от $From до $To, верно?"/>
 	</input>
