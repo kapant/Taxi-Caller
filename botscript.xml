@@ -23,6 +23,7 @@
 	<input pattern = "инфа">
 		<var name = "Out">
 			<script>
+				var request = CreateRequest();
 				"Есть";
 			</script>
 		</var>
