@@ -21,8 +21,11 @@
 		<output value = "Сейчас $Time"/>
 	</input>
 	<input pattern = "инфа">
-		<script>
-			alert("Есть");
-		</script>
+		<var name = "Out">
+			<script>
+				"Есть";
+			</script>
+		</var>
+		<output value = "$name"/>
 	</input>
 </context>
