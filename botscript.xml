@@ -1,5 +1,5 @@
 <context>
-  <input pattern="$Text">
+  <input pattern="* такси $Text">
     
   </input>
 </context>
