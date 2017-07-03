@@ -1,7 +1,6 @@
 <context>
-  <var name = "From" value = "такси">
-    <input pattern="* такси">
-      <output value = "$From"/>
-    </input>
-   </var>
+  <var name = "From" value = ""/>
+  <input pattern="* такси">
+    <output value = "$From"/>
+  </input>
 </context>
