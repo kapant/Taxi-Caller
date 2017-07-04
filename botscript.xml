@@ -1,7 +1,7 @@
 <context>
 	<pattern name = "From" value = "$Text"/>
 	<pattern name = "To" value = "$Text"/>
-	<input pattern = "* такси * { [(от|с) [$From]] * [(до|к) [$To]] }">
+	<input pattern = "* такси * { [(от|с) [$From] (пожалуйста|буд*)] * [(до|к) [$To] (пожалуйста|буд*)] }">
   		<context if = "empty($From)" modal = "true">
 			<output value = "Откуда едем?"/>
 			<input pattern = "$From">
@@ -35,27 +35,12 @@
 				</script>
 			</var>
 			<output value = "Нужно такси от $GeoFrom до $GeoTo, верно?"/>
+			<input pattern = "* [да|верно|ага|так] *">
+				<output value = "Обработка"/>
+			</input>
+			<input pattern = "* [не*] *">
+				<context id = "empty_from"/>
+			</input>
 		</context>
-	</input>
-	<input pattern = " * (адрес) $Text">
-		<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
-			<param name = "format" value = "json"/>
-			<param name = "geocode" value = "$Text"/>
-		</get>
-		<var name = "Address">
-			<script>
-				$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
-			</script>
-		</var>
-		<output value = "$Address"/>
-	</input>
-	<input pattern = "тест">
-		<get url = "https://api.telegram.org/bot409639273:AAHL6W-utcg_GbqbXkP-w5Hq_A9y_4PaKtc/getMe" var = "Res"/>
-		<var name = "Name">
-			<script>
-				$Res.result.first_name;
-			</script>
-		</var>
-		<output value = "$Name"/>
 	</input>
 </context>
