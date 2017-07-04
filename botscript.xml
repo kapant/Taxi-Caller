@@ -26,7 +26,7 @@
 		</get>
 		<var name = "Address">
 			<script>
-				$Place.response.GeoObjectCollection.featureMember.GeoObject;
+				$Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.request;
 			</script>
 		</var>
 		<output value = "Address"/>
