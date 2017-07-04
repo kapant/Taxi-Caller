@@ -30,4 +30,10 @@
 			</script>
 		</output>
 	</input>
+	<input pattern = "тест">
+		<get url = "https://api.telegram.org/bot409639273:AAHL6W-utcg_GbqbXkP-w5Hq_A9y_4PaKtc/getMe" var = "Res"/>
+		<output>
+			$Res.result.first_name;
+		</output>
+	</input>
 </context>
