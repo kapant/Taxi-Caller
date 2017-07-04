@@ -26,7 +26,7 @@
 		</get>
 		<var name = "Address">
 			<script>
-				$Place.response.GeoObjectCollection.featureMember;
+				$Place.response.GeoObjectCollection.featureMember[metaDataProperty];
 			</script>
 		</var>
 		<output value = "$Address"/>
