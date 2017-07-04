@@ -20,19 +20,8 @@
 		</context>
 	</input>
 	<input pattern = "саратов">
-		<var name = "Place">
-			<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
-				ymaps.ready(init);
-
-				function init() {
-    					var myMap = new ymaps.Map('map', {
-        					center: [55.753994, 37.622093],
-        					zoom: 9
-    					});
-				}
-				"Есть";
-			</script>
-		</var>
+		<get url = "https://geocode-maps.yandex.ru/1.x/?format=json&geocode=Москва, улица Новый Арбат, дом 24" var = "Place">
+		</get>
 		<output value = "$Place"/>
 	</input>
 </context>
