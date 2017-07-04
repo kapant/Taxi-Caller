@@ -39,10 +39,8 @@
 				<output value = "Обработка"/>
 			</input>
 			<input pattern = "* (не*) *">
-				<script>
-					$From = "";
-					$To = "";
-				</script>
+				<var name = "From" value = ""/>
+				<var name = "To" value = ""/>
 				<context id = "empty_from"/>
 			</input>
 		</context>
