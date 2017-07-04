@@ -43,7 +43,6 @@
 					$From = "";
 					$To = "";
 				</script>
-				<output value = "Извините"/>
 				<context id = "empty_from"/>
 			</input>
 		</context>
