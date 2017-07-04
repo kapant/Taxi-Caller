@@ -34,7 +34,7 @@
 		<get url = "https://api.telegram.org/bot409639273:AAHL6W-utcg_GbqbXkP-w5Hq_A9y_4PaKtc/getMe" var = "Res"/>
 		<output>
 			<script>
-				$Res.result.first_name;
+				Res.result.first_name;
 			</script>
 		</output>
 	</input>
