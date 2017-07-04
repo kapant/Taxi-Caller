@@ -25,7 +25,9 @@
 			<param name = "geocode" value = "$Text"/>
 		</get>
 		<output>
-			"нашел"
+			<script>
+				Place.response.GeoObjectCollection.metaDataProperty.GeocoderMetaData.text;
+			</script>
 		</output>
 	</input>
 </context>
