@@ -2,7 +2,7 @@
 	<pattern name = "From" value = "$Text"/>
 	<pattern name = "To" value = "$Text"/>
 	<input pattern = "* (такси) * { [(от|с) [$From] [пожалуйста|буд*]] * [(до|к) [$To] [пожалуйста|буд*]] }">
-  		<context if = "empty($From)" modal = "true">
+  		<context if = "empty($From)" modal = "true" id = "empty_from">
 			<output value = "Откуда едем?"/>
 			<input pattern = "$From">
 				<context id = "empty_to" if = "empty($To)"/>
@@ -41,6 +41,7 @@
 			<input pattern = "* (не*) *">
 				<var name = "From" value = ""/>
 				<var name = "To" value = ""/>
+				<context id = "empty_from"/>
 			</input>
 		</context>
 	</input>
