@@ -16,7 +16,25 @@
 			</input>
 		</context>
 		<context id = "done">
-			<output value = "Нужно такси от $From до $To, верно?"/>
+			<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
+				<param name = "format" value = "json"/>
+				<param name = "geocode" value = "$From"/>
+			</get>
+			<var name = "GeoFrom">
+				<script>
+					$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+				</script>
+			</var>
+			<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
+				<param name = "format" value = "json"/>
+				<param name = "geocode" value = "$To"/>
+			</get>
+			<var name = "GeoTo">
+				<script>
+					$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+				</script>
+			</var>
+			<output value = "Нужно такси от $GeoFrom до $GeoTo, верно?"/>
 		</context>
 	</input>
 	<input pattern = " * (адрес) $Text">
