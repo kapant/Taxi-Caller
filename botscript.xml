@@ -41,7 +41,7 @@
 			<input pattern = "* (не*) *">
 				<var name = "From" value = ""/>
 				<var name = "To" value = ""/>
-				<context id = "empty_from"/>
+				//<context id = "empty_from"/>
 			</input>
 		</context>
 	</input>
