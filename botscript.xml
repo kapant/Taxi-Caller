@@ -24,11 +24,12 @@
 			<param name = "format" value = "json"/>
 			<param name = "geocode" value = "$Text"/>
 		</get>
-		<output>
+		<var name = "Address">
 			<script>
-				Place.response.GeoObjectCollection.featureMember.GeoObject.metaDataProperty.GeocoderMetaData.text;
+				$Place.response.GeoObjectCollection.featureMember.GeoObject.metaDataProperty.GeocoderMetaData.text;
 			</script>
-		</output>
+		</var>
+		<output value = "Address"/>
 	</input>
 	<input pattern = "тест">
 		<get url = "https://api.telegram.org/bot409639273:AAHL6W-utcg_GbqbXkP-w5Hq_A9y_4PaKtc/getMe" var = "Res"/>
