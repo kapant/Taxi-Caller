@@ -19,11 +19,15 @@
 			<output value = "Нужно такси от $From до $To, верно?"/>
 		</context>
 	</input>
-	<input pattern = "саратов">
+	<input pattern = " * (адрес) $Text">
 		<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
 			<param name = "format" value = "json"/>
-			<param name = "geocode" value = "Москва, улица Новый Арбат, дом 24"/>
+			<param name = "geocode" value = "$Text"/>
 		</get>
-		<output value = "$Place"/>
+		<output>
+			<script>
+				$Place.response;
+			</script>
+		</output>
 	</input>
 </context>
