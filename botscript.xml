@@ -25,9 +25,7 @@
 			<param name = "geocode" value = "$Text"/>
 		</get>
 		<output>
-			<script>
-				Place.response;
-			</script>
+			"нашел"
 		</output>
 	</input>
 </context>
