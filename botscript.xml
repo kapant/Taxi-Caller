@@ -26,7 +26,7 @@
 		</get>
 		<output>
 			<script>
-				$Place.response;
+				Place.response;
 			</script>
 		</output>
 	</input>
