@@ -26,10 +26,10 @@
 		</get>
 		<var name = "Address">
 			<script>
-				$Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.request;
+				$Place.response.GeoObjectCollection.featureMember;
 			</script>
 		</var>
-		<output value = "Address"/>
+		<output value = "$Address"/>
 	</input>
 	<input pattern = "тест">
 		<get url = "https://api.telegram.org/bot409639273:AAHL6W-utcg_GbqbXkP-w5Hq_A9y_4PaKtc/getMe" var = "Res"/>
