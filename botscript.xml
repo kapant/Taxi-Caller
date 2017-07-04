@@ -21,8 +21,8 @@
 	</input>
 	<input pattern = "саратов">
 		<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
-			<param name = "format" value = "json">
-			<param name = "geocode" value = "Москва, улица Новый Арбат, дом 24">
+			<param name = "format" value = "json"/>
+			<param name = "geocode" value = "Москва, улица Новый Арбат, дом 24"/>
 		</get>
 		<output value = "$Place"/>
 	</input>
