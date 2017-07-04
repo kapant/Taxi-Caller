@@ -19,4 +19,17 @@
 			<output value = "Нужно такси от $From до $To, верно?"/>
 		</context>
 	</input>
+	<input pattern = "саратов">
+		<var name = "Place">
+			<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
+				ymaps.ready(init);
+
+				function init() {
+    					var myMap = new ymaps.Map('map', {
+        				center: [55.753994, 37.622093],
+        				zoom: 9
+    				});
+			</script>
+		</var>
+	</input>
 </context>
