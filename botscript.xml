@@ -45,14 +45,10 @@
 							<![CDATA[
 							var flag = 0;
 							if ($UserNumber.length <= 13) {
-								if ($UserNumber[0] != '+' && $UserNumber[1] != ' ' && $UserNumber.substr(0, 3) != "+ 7") {
-									flag = 1;
-								} else {
-									for (var i = 2; i < $UserNumber.length; i++) {
-										if ($UserNumber[i] < '0' || $UserNumber[i] > '9') {
-											flag = 1;
-											break;
-										}
+								for (var i = 2; i < $UserNumber.length; i++) {
+									if ($UserNumber[i] < '0' || $UserNumber[i] > '9') {
+										flag = 1;
+										break;
 									}
 								}
 							} else {
