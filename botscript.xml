@@ -116,8 +116,10 @@
 					<context if = '$RemNum == "0"'>
 						<var name = "UserNumber" value = ""/>
 					</context>
-					<input pattern = "* [да*|верно|ага|так|сдела*] *" id = "new_order"/>
-					<input pattern = "* (не*) *" id = "start"/>
+					<context>
+						<input pattern = "* [да*|верно|ага|так|сдела*] *" id = "new_order"/>
+						<input pattern = "* (не*) *" id = "start"/>
+					</context>
 				</input>
 				<input pattern = "* (не*) *">
 					<output value = "Что именно неверно?"/>
