@@ -58,11 +58,11 @@
 							]]>
 						</script>
 					</var>
-					<context if = '$Err == "1"'>
+					<context if = '$Err == 1'>
 						<output value = "Номер введен неверно, пожалуйста, введите еще раз."/>
 						<input id = "enter_number"/>
 					</context>
-					<context if = '$Err == "0"'>
+					<context if = '$Err == 0'>
 						<output value = "Запомнить номер?"/>
 						<input pattern = "* [да*|верно|ага|так|запомн*] *">
 							<var name = "RemNum" value = "1"/>
