@@ -68,21 +68,20 @@
 			
 			<!--проверка закакза-->
 			<context id = "done">
+				
+				<!--проверка пункта назначения-->
 				<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
 					<param name = "format" value = "json"/>
 					<param name = "geocode" value = "$From"/>
 				</get>
-				
-				<!--проверка пункта назначения-->
 				<var name = "GeoResNum">
 					<script>
 						$Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found;
 					</script>
 				</var>
-				<context if = '$GeoResNum == "0"'>
-					<output value = "Я не смог найти место отправления, пожалуйста, повторите его название."/>
+				<output if = '$GeoResNum == "0"' value = "Я не смог найти место отправления, пожалуйста, повторите его название.">
 					<input id = "enter_from"/>
-				</context>
+				</output>
 				<var name = "GeoFrom">
 					<script>
 						$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
@@ -99,10 +98,9 @@
 						$Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found;
 					</script>
 				</var>
-				<context if = '$GeoResNum == "0"'>
-					<output value = "Я не смог найти место прибытия, пожалуйста, повторите его название."/>
+				<output if = '$GeoResNum == "0"' value = "Я не смог найти место прибытия, пожалуйста, повторите его название.">
 					<input id = "enter_to"/>
-				</context>
+				</output>
 				<var name = "GeoTo">
 					<script>
 						$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
