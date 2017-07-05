@@ -35,7 +35,7 @@
 				
 					<!--проверка номера-->
 					<var name = "Err">
-						<!--<script>
+						<script>
 							var flag = 0;
 							if ($UserNumber.length <= 12) {
 								for (var i = 0; i < $UserNumber.length; i++) {
@@ -48,7 +48,7 @@
 								flag = 1;
 							}
 							flag;
-						</script>-->
+						</script>
 					</var>
 					<context if = '$Err == "1"' id = "empty_number"/>
 					<context if = '$Err == "0"'>
@@ -111,11 +111,11 @@
 				<output value = "Нужно такси от $GeoFrom до $GeoTo на номер $UserNumber, верно?"/>
 				<input pattern = "* [да|верно|ага|так] *">
 					<output value = "Обработка. сделать новый закказ?"/>
-					<!--<var name = "From" value = ""/>
+					<var name = "From" value = ""/>
 					<var name = "To" value = ""/>
 					<context if = '$RemNum == "0"'>
 						<var name = "UserNumber" value = ""/>
-					</context>-->
+					</context>
 					<context>
 						<input pattern = "* [да*|верно|ага|так|сдела*] *" id = "new_order"/>
 						<input pattern = "* (не*) *" id = "start"/>
