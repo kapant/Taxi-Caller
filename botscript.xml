@@ -15,7 +15,8 @@
 			<!--пункт отправления-->
 			<context if = "empty($From)" modal = "true" id = "empty_from">
 				<output value = "Откуда едем?"/>
-				<input pattern = "[от] *" var = "$From" id = "enter_from">
+				<input pattern = "[от] $Text" id = "enter_from">
+					<var name = "From" value = "$Text"/>
 					<context id = "done"/>
 				</input>
 			</context>
@@ -23,7 +24,8 @@
 			<!--пункт назначения-->
 			<context if = "empty($To)" modal = "true" id = "empty_to">
 				<output value = "Куда едем?"/>
-				<input pattern = "[к|до|на]" var = "$To" id = "enter_to">
+				<input pattern = "[к|до|на] $Text" id = "enter_to">
+					<var name = "To" value = "$Text"/>
 					<context id = "done"/>
 				</input>
 			</context>
@@ -31,8 +33,9 @@
 			<!--номер-->
 			<context if = "empty($UserNumber)" modal = "true" id = "empty_number">
 				<output value = "На какой номер сделать заказ?"/>
-				<input pattern = "*" var = "$UserNumber">
-				
+				<input pattern = "$Text">
+					<var name= "UserNumber" value = "$Text"/>
+					
 					<!--проверка номера-->
 					<var name = "Err">
 						<!--<script>
