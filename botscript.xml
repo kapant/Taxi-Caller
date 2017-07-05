@@ -54,6 +54,7 @@
 								flag = 1;
 							}
 							flag;*/
+							0;
 						</script>
 					</var>
 					<context if = '$Err == "1"'>
