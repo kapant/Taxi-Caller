@@ -123,11 +123,13 @@
 				</input>
 				<input pattern = "* (не*) *">
 					<output value = "Что именно неверно?"/>
-					<input pattern = "$Text">
-						<context if = 'has($Text, "подач") or has($Text, "отправлен") or has($Text, "откуда")' id = "empty_from"/>
-						<context if = 'has($Text, "назначен") or has($Text, "куда")' id = "empty_to"/>
-						<context if = 'has($Text, "номер")' id = "empty_number"/>
-					</input>
+					<context>
+						<input pattern = "$Text">
+							<context if = 'has($Text, "подач") or has($Text, "отправлен") or has($Text, "откуда")' id = "empty_from"/>
+							<context if = 'has($Text, "назначен") or has($Text, "куда")' id = "empty_to"/>
+							<context if = 'has($Text, "номер")' id = "empty_number"/>
+						</input>
+					</context>
 				</input>
 				
 			</context>
