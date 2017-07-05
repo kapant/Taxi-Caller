@@ -3,7 +3,7 @@
 		<output value = "Нужно такси?"/>
 		<var name = "UserNumber" value = ""/>
 		
-		<context>
+		<context id = "new_order">
 		
 		
 		<!--новый заказ-->
@@ -44,11 +44,15 @@
 						<script>
 							<![CDATA[
 							var flag = 0;
-							if ($UserNumber.length <= 12) {
-								for (var i = 0; i < $UserNumber.length; i++) {
-									if ($UserNumber[i] < '0' || $UserNumber[i] > '9') {
-										flag = 1;
-										break;
+							if ($UserNumber.length <= 13) {
+								if ($UserNumber.substr(0, 3) != "+ 7") {
+									flag = 1;
+								} else {
+									for (var i = 2; i < $UserNumber.length; i++) {
+										if ($UserNumber[i] < '0' || $UserNumber[i] > '9') {
+											flag = 1;
+											break;
+										}
 									}
 								}
 							} else {
@@ -85,17 +89,15 @@
 					<param name = "format" value = "json"/>
 					<param name = "geocode" value = "$From"/>
 				</get>
-				<!--<var name = "GeoResNum">
-					<script>
-						$Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found;
-					</script>
-				</var>
-				<output if = '$GeoResNum == "0"' value = "Я не смог найти место отправления, пожалуйста, повторите его название.">
-					<input id = "enter_from"/>
-				</output>-->
 				<var name = "GeoFrom">
 					<script>
-						$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+						<![CDATA[
+						if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found) {
+							$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+						} else {
+							"Адрес не найден";
+						}
+						]]>
 					</script>
 				</var>
 				
@@ -104,17 +106,15 @@
 					<param name = "format" value = "json"/>
 					<param name = "geocode" value = "$To"/>
 				</get>
-				<!--<var name = "GeoResNum">
-					<script>
-						$Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found;
-					</script>
-				</var>
-				<output if = '$GeoResNum == "0"' value = "Я не смог найти место прибытия, пожалуйста, повторите его название.">
-					<input id = "enter_to"/>
-				</output>-->
 				<var name = "GeoTo">
 					<script>
-						$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+						<![CDATA[
+						if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found) {
+							$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+						} else {
+							"Адрес не найден";
+						}
+						]]>
 					</script>
 				</var>
 				
@@ -146,7 +146,10 @@
 			</context>
 		</input>
 		
-		<input pattern = "*" id = "start"/>
+		<input pattern = "*" id = "start">
+			<output value = "Дайте знать, когда будет нужно."/>
+			<context id = "new_order"/>
+		</input>
 		
 		</context>
 	</input>
