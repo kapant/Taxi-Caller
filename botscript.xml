@@ -79,9 +79,9 @@
 						$Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found;
 					</script>
 				</var>
-				<output if = '$GeoResNum == "0"' value = "Я не смог найти место отправления, пожалуйста, повторите его название.">
+				<!--<output if = '$GeoResNum == "0"' value = "Я не смог найти место отправления, пожалуйста, повторите его название.">
 					<input id = "enter_from"/>
-				</output>
+				</output>-->
 				<var name = "GeoFrom">
 					<script>
 						$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
@@ -98,9 +98,9 @@
 						$Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found;
 					</script>
 				</var>
-				<output if = '$GeoResNum == "0"' value = "Я не смог найти место прибытия, пожалуйста, повторите его название.">
+				<!--<output if = '$GeoResNum == "0"' value = "Я не смог найти место прибытия, пожалуйста, повторите его название.">
 					<input id = "enter_to"/>
-				</output>
+				</output>-->
 				<var name = "GeoTo">
 					<script>
 						$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
