@@ -17,6 +17,9 @@
 				<output value = "Откуда едем?"/>
 				<input pattern = "[от] $Text" id = "enter_from">
 					<var name = "From" value = "$Text"/>
+					<context if = "empty($To)" id = "empty_to"/>
+					<context if = "empty($UserNumber)" id = "empty_number"/>
+					<context id = "done"/>
 				</input>
 			</context>
 			
@@ -25,6 +28,8 @@
 				<output value = "Куда едем?"/>
 				<input pattern = "[к|до|на] $Text" id = "enter_to">
 					<var name = "To" value = "$Text"/>
+					<context if = "empty($UserNumber)" id = "empty_number"/>
+					<context id = "done"/>
 				</input>
 			</context>
 			
@@ -60,6 +65,7 @@
 						</input>
 						<input pattern = "* (не*) *">
 							<var name = "RemNum" value = "0"/>
+							<context id = "done"/>
 						</input>
 					</context>
 					
