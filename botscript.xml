@@ -35,7 +35,7 @@
 				
 					<!--проверка номера-->
 					<var name = "Err">
-						<script>
+						<script type = "text/javascript">
 							var flag = 0, str = $UserNumber;
 							if (str.length <= 12) {
 								for (var i = 0; i < str.length; i++) {
