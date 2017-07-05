@@ -88,8 +88,8 @@
 				<var name = "GeoFrom">
 					<script>
 						<![CDATA[
-						if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found) {
-							$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+						if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
+							//$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
 						} else {
 							"Адрес не найден";
 						}
@@ -105,8 +105,8 @@
 				<var name = "GeoTo">
 					<script>
 						<![CDATA[
-						if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found) {
-							$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+						if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
+							//$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
 						} else {
 							"Адрес не найден";
 						}
