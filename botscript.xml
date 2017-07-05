@@ -1,7 +1,7 @@
 <context>
 	<input pattern = "/start" id = "start">
 		<output value = "Нужно такси?"/>
-		<!--<pattern name = "UserNumber" value = "$Text"/>-->
+		<pattern name = "UserNumber" value = "$Text"/>
 		
 		<context>
 		
@@ -10,7 +10,6 @@
 		<input pattern = "* (да*|верно|ага|так|нужно) *" id = "new_order">
 			<pattern name = "From" value = "$Text"/>
 			<pattern name = "To" value = "$Text"/>
-			<pattern name = "UserNumber" value = "$Text"/>
 			<var name = "RemNum" value = "0"/>
 			
 			<!--пункт отправления-->
