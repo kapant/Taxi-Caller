@@ -126,7 +126,7 @@
 					<context>
 						<input pattern = "* [да*|верно|ага|так|сдела*] *">
 							<output value = "Откуда едем?"/>
-							<input id = "enter_from"/>
+							<context id = "empty_from"/>
 						</input>
 						<input pattern = "* (не*) *" id = "start">
 							<output value = "Дайте знать, когда будет нужно."/>
