@@ -3,6 +3,9 @@
 		<output value = "Нужно такси?"/>
 		<pattern name = "UserNumber" value = "$Text"/>
 		
+		<context>
+		
+		
 		<!--новый заказ-->
 		<input pattern = "* (да*|верно|ага|так|нужно) *" id = "new_order">
 			<pattern name = "From" value = "$Text"/>
@@ -57,7 +60,7 @@
 					</context>
 					
 				</input>
-			</context>-->
+			</context>
 			
 			<!--проверка закакза--
 			<context id = "done">
@@ -125,5 +128,8 @@
 				
 			</context>-->
 		</input>
+		
+		
+		</context>
 	</input>
 </context>
