@@ -13,7 +13,7 @@
 			<var name = "RemNum" value = "0"/>
 			
 			<!--пункт отправления-->
-			<context id = "empty_from">
+			<context if = "empty($From)" modal = "true" id = "empty_from">
 				<output value = "Откуда едем?"/>
 				<input pattern = "$From" id = "enter_from">
 					<context id = "done"/>
@@ -21,7 +21,7 @@
 			</context>
 			
 			<!--пункт назначения-->
-			<context id = "empty_to">
+			<context if = "empty($To)" modal = "true" id = "empty_to">
 				<output value = "Куда едем?"/>
 				<input pattern = "$To" id = "enter_to">
 					<context id = "done"/>
@@ -29,7 +29,7 @@
 			</context>
 			
 			<!--номер-->
-			<context id = "empty_number">
+			<context if = "empty($UserNumber)" modal = "true" id = "empty_number">
 				<output value = "На какой номер сделать заказ?"/>
 				<input pattern = "$UserNumber">
 				
