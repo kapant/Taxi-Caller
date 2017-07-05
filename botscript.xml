@@ -28,12 +28,12 @@
 				</input>
 			</context>
 			
-			<!--номер--
+			<!--номер-->
 			<context if = "empty($UserNumber)" modal = "true" id = "empty_number">
 				<output value = "На какой номер сделать заказ?"/>
 				<input pattern = "$UserNumber">
 				
-					<!--проверка номера--
+					<!--проверка номера-->
 					<var name = "Err" value = "0">
 						<script>
 							var flag = 0;
@@ -62,14 +62,14 @@
 				</input>
 			</context>
 			
-			<!--проверка закакза--
+			<!--проверка закакза-->
 			<context id = "done">
 				<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
 					<param name = "format" value = "json"/>
 					<param name = "geocode" value = "$From"/>
 				</get>
 				
-				<!--проверка пункта назначения--
+				<!--проверка пункта назначения-->
 				<var name = "GeoResNum">
 					<script>
 						$Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found;
@@ -85,7 +85,7 @@
 					</script>
 				</var>
 				
-				<!--проверка пункта отправления--
+				<!--проверка пункта отправления-->
 				<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
 					<param name = "format" value = "json"/>
 					<param name = "geocode" value = "$To"/>
@@ -105,7 +105,7 @@
 					</script>
 				</var>
 				
-				<!--подтверждение заказа--
+				<!--подтверждение заказа-->
 				<output value = "Нужно такси от $GeoFrom до $GeoTo на номер $UserNumber, верно?"/>
 				<input pattern = "* [да|верно|ага|так] *">
 					<output value = "Обработка. сделать новый закказ?"/>
@@ -126,7 +126,7 @@
 					</input>
 				</input>
 				
-			</context>-->
+			</context>
 		</input>
 		
 		
