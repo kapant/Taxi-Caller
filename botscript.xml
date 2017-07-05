@@ -55,8 +55,12 @@
 						<output value = "Запомнить номер?"/>
 						<input pattern = "* [да*|верно|ага|так|запомн*] *">
 							<var name = "RemNum" value = "1"/>
+							<context id = "done"/>
 						</input>
-						<context id = "done"/>
+						<input pattern = "* (не*) *">
+							<var name = "RemNum" value = "0"/>
+							<context id = "done"/>
+						</input>
 					</context>
 					
 				</input>
