@@ -84,7 +84,7 @@
 				</output>-->
 				<var name = "GeoFrom">
 					<script>
-						$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+						//$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
 					</script>
 				</var>
 				
@@ -103,7 +103,7 @@
 				</output>-->
 				<var name = "GeoTo">
 					<script>
-						$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+						//$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
 					</script>
 				</var>
 				
