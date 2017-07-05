@@ -35,7 +35,7 @@
 				
 					<!--проверка номера-->
 					<var name = "Err">
-						<script>
+						<!--<script>
 							var flag = 0;
 							if ($UserNumber.length <= 12) {
 								for (var i = 0; i < $UserNumber.length; i++) {
@@ -48,7 +48,7 @@
 								flag = 1;
 							}
 							flag;
-						</script>
+						</script>-->
 					</var>
 					<context if = '$Err == "1"' id = "empty_number"/>
 					<context if = '$Err == "0"'>
