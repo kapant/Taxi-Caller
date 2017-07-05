@@ -45,7 +45,7 @@
 							<![CDATA[
 							var flag = 0;
 							if ($UserNumber.length <= 13) {
-								if ($UserNumber.substr(0, 3) != "+ 7") {
+								if ($UserNumber[0] != '+' && $UserNumber[1] != ' ' && $UserNumber.substr(0, 3) != "+ 7") {
 									flag = 1;
 								} else {
 									for (var i = 2; i < $UserNumber.length; i++) {
