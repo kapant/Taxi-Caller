@@ -89,7 +89,7 @@
 					<script>
 						<![CDATA[
 						if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
-							//$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+							$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
 						} else {
 							"Адрес не найден";
 						}
@@ -106,7 +106,7 @@
 					<script>
 						<![CDATA[
 						if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
-							//$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+							$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
 						} else {
 							"Адрес не найден";
 						}
@@ -128,7 +128,7 @@
 							<output value = "Откуда едем?"/>
 							<context id = "empty_from"/>
 						</input>
-						<input pattern = "* (не*) *" id = "start">
+						<input pattern = "* (не*) *">
 							<output value = "Дайте знать, когда будет нужно."/>
 							<context id = "new_order"/>
 						</input>
