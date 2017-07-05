@@ -74,12 +74,12 @@
 					<param name = "format" value = "json"/>
 					<param name = "geocode" value = "$From"/>
 				</get>
-				<var name = "GeoResNum">
+				<!--<var name = "GeoResNum">
 					<script>
 						$Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found;
 					</script>
 				</var>
-				<!--<output if = '$GeoResNum == "0"' value = "Я не смог найти место отправления, пожалуйста, повторите его название.">
+				<output if = '$GeoResNum == "0"' value = "Я не смог найти место отправления, пожалуйста, повторите его название.">
 					<input id = "enter_from"/>
 				</output>-->
 				<var name = "GeoFrom">
@@ -93,12 +93,12 @@
 					<param name = "format" value = "json"/>
 					<param name = "geocode" value = "$To"/>
 				</get>
-				<var name = "GeoResNum">
+				<!--<var name = "GeoResNum">
 					<script>
 						$Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found;
 					</script>
 				</var>
-				<!--<output if = '$GeoResNum == "0"' value = "Я не смог найти место прибытия, пожалуйста, повторите его название.">
+				<output if = '$GeoResNum == "0"' value = "Я не смог найти место прибытия, пожалуйста, повторите его название.">
 					<input id = "enter_to"/>
 				</output>-->
 				<var name = "GeoTo">
