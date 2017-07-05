@@ -7,7 +7,7 @@
 		
 		
 		<!--новый заказ-->
-		<input pattern = "* (да*|верно|ага|так|нужно) *" id = "new_order">
+		<input pattern = "* (да*|верно|ага|так|нужно|сейчас) *" id = "new_order">
 			<var name = "From" value = ""/>
 			<var name = "To" value = ""/>
 			<var name = "RemNum" value = "0"/>
@@ -124,8 +124,14 @@
 						<var name = "UserNumber" value = ""/>
 					</context>
 					<context>
-						<input pattern = "* [да*|верно|ага|так|сдела*] *" id = "new_order"/>
-						<input pattern = "* (не*) *" id = "start"/>
+						<input pattern = "* [да*|верно|ага|так|сдела*] *">
+							<output value = "Откуда едем?"/>
+							<input id = "enter_from"/>
+						</input>
+						<input pattern = "* (не*) *" id = "start">
+							<output value = "Дайте знать, когда будет нужно."/>
+							<context id = "new_order"/>
+						</input>
 					</context>
 				</input>
 				<input pattern = "* (не*) *">
@@ -142,7 +148,7 @@
 			</context>
 		</input>
 		
-		<input pattern = "*" id = "start">
+		<input pattern = "*">
 			<output value = "Дайте знать, когда будет нужно."/>
 			<context id = "new_order"/>
 		</input>
