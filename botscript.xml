@@ -15,7 +15,7 @@
 			<!--пункт отправления-->
 			<context if = "empty($From)" modal = "true" id = "empty_from">
 				<output value = "Откуда едем?"/>
-				<input pattern = "$From" id = "enter_from">
+				<input pattern = "*" var = "$From" id = "enter_from">
 					<context id = "done"/>
 				</input>
 			</context>
