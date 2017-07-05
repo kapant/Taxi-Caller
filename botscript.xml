@@ -1,15 +1,15 @@
 <context>
 	<input pattern = "/start" id = "start">
 		<output value = "Нужно такси?"/>
-		<pattern name = "UserNumber" value = "$Text"/>
+		<var name = "UserNumber" value = ""/>
 		
 		<context>
 		
 		
 		<!--новый заказ-->
 		<input pattern = "* (да*|верно|ага|так|нужно) *" id = "new_order">
-			<pattern name = "From" value = "$Text"/>
-			<pattern name = "To" value = "$Text"/>
+			<var name = "From" value = ""/>
+			<var name = "To" value = ""/>
 			<var name = "RemNum" value = "0"/>
 			
 			<!--пункт отправления-->
@@ -35,11 +35,11 @@
 				
 					<!--проверка номера-->
 					<var name = "Err">
-						<script type = "text/javascript">
-							var flag = 0, str = $UserNumber;
-							if (str.length <= 12) {
-								for (var i = 0; i < str.length; i++) {
-									if (str[i] < '0' || str[i] > '9') {
+						<!--<script>
+							var flag = 0;
+							if ($UserNumber.length <= 12) {
+								for (var i = 0; i < $UserNumber.length; i++) {
+									if ($UserNumber[i] < '0' || $UserNumber[i] > '9') {
 										flag = 1;
 										break;
 									}
@@ -48,7 +48,7 @@
 								flag = 1;
 							}
 							flag;
-						</script>
+						</script>-->
 					</var>
 					<context if = '$Err == "1"' id = "empty_number"/>
 					<context if = '$Err == "0"'>
