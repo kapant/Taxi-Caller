@@ -25,12 +25,12 @@
 				</input>
 			</context>
 			
-			<!--номер-->
+			<!--номер--
 			<context if = "empty($UserNumber)" modal = "true" id = "empty_number">
 				<output value = "На какой номер сделать заказ?"/>
 				<input pattern = "$UserNumber">
 				
-					<!--проверка номера-->
+					<!--проверка номера--
 					<var name = "Err" value = "0">
 						<script>
 							var flag = 0;
@@ -57,7 +57,7 @@
 					</context>
 					
 				</input>
-			</context>
+			</context>-->
 			
 			<!--проверка закакза--
 			<context id = "done">
