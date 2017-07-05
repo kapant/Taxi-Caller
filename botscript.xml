@@ -7,7 +7,7 @@
 		
 		
 		<!--новый заказ-->
-		<input pattern = "* (да*|верно|ага|так|нужно|сейчас) *" id = "new_order">
+		<input pattern = "* (да*|верно|ага|так|нужно|сейчас|хочу) *" id = "new_order">
 			<var name = "From" value = ""/>
 			<var name = "To" value = ""/>
 			<var name = "RemNum" value = "0"/>
@@ -21,6 +21,10 @@
 					<context if = "empty($UserNumber)" id = "empty_number"/>
 					<context id = "done"/>
 				</input>
+				<input pattern = "* (отмена) *">
+					<output value = "Заказ отменен. Дайте знать, когда захотите сделать новый."/>
+					<context id = "new_order"/>
+				</input>
 			</context>
 			
 			<!--пункт назначения-->
@@ -30,6 +34,10 @@
 					<var name = "To" value = "$Text"/>
 					<context if = "empty($UserNumber)" id = "empty_number"/>
 					<context id = "done"/>
+				</input>
+				<input pattern = "* (отмена) *">
+					<output value = "Заказ отменен. Дайте знать, когда захотите сделать новый."/>
+					<context id = "new_order"/>
 				</input>
 			</context>
 			
@@ -72,8 +80,16 @@
 							<var name = "RemNum" value = "0"/>
 							<context id = "done"/>
 						</input>
+						<input pattern = "* (отмена) *">
+							<output value = "Заказ отменен. Дайте знать, когда захотите сделать новый."/>
+							<context id = "new_order"/>
+						</input>
 					</context>
 					
+				</input>
+				<input pattern = "* (отмена) *">
+					<output value = "Заказ отменен. Дайте знать, когда захотите сделать новый."/>
+					<context id = "new_order"/>
 				</input>
 			</context>
 			
@@ -137,6 +153,10 @@
 				<input pattern = "* (не*) *">
 					<output value = "Что именно неверно?"/>
 					<context>
+						<input pattern = "* (отмена) *">
+							<output value = "Заказ отменен. Дайте знать, когда захотите сделать новый."/>
+							<context id = "new_order"/>
+						</input>
 						<input pattern = "$Text">
 							<context if = 'has($Text, "подач") or has($Text, "отправлен") or has($Text, "откуда")' id = "empty_from"/>
 							<context if = 'has($Text, "назначен") or has($Text, "куда")' id = "empty_to"/>
@@ -144,8 +164,17 @@
 						</input>
 					</context>
 				</input>
+				<input pattern = "* (отмена) *">
+					<output value = "Заказ отменен. Дайте знать, когда захотите сделать новый."/>
+					<context id = "new_order"/>
+				</input>
 				
 			</context>
+		</input>
+		
+		<input pattern = "/help">
+			<output value = "Помощь. Тра-та-та. Нужно такси?"/>
+			<context id = "new_order"/>
 		</input>
 		
 		<input pattern = "*">
