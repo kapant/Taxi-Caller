@@ -37,7 +37,7 @@
 						</var>
 						<context if = "empty($GeoFrom)" modal = "true">
 							<output value = "Извините, адрес не найден. Пожалуйста, повторите ввод."/>
-							<input id = "enter_from"/>
+							<input pattern = "[от] $Text" id = "enter_from"/>
 						</context>
 						
 						<context if = "empty($To)" id = "empty_to" modal = "true"/>
