@@ -110,12 +110,11 @@
 						
 						<context if = '$Err == 0'>
 							<output value = "Запомнить номер?"/>
-							<input pattern = "* [да*|верно|ага|так|запомн*] *">
-								<var name = "RemNum" value = "1"/>
+							<input pattern = "* (да*|верно|ага|так|запомн*) *">
+								<var name = "$RootUserNumber" value = "$UserNumber"/>
 								<context id = "done"/>
 							</input>
 							<input pattern = "*">
-								<var name = "RemNum" value = "0"/>
 								<context id = "done"/>
 							</input>
 							<input pattern = "* (отмена|стоп) *">
@@ -139,17 +138,10 @@
 					<input pattern = "* [да|верно|ага|так] *">
 						<var name = "From" value = ""/>
 						<var name = "To" value = ""/>
-						<script>
-							<![CDATA[
-								if ($RemNum == "1") {
-									$RootUserNumber = $UserNumber;
-								}
-							]]>
-						</script>
 						<var name = "UserNumber" value = ""/>
 						<context id = "next">
 							<output value = "Обработка. сделать новый закказ?"/>
-							<input pattern = "* [да*|верно|ага|так|сдела*] *">
+							<input pattern = "* (да*|верно|ага|так|сдела*) *">
 								<output value = "Откуда едем?"/>
 								<context id = "empty_from"/>
 							</input>
