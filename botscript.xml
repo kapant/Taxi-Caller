@@ -139,12 +139,15 @@
 					<input pattern = "* [да|верно|ага|так] *">
 						<var name = "From" value = ""/>
 						<var name = "To" value = ""/>
-						<context if = '$RemNum == 1'>
-							<var name = "RootUserNumber" value = "$UserNumber"/>
-							<context id = "next"/>
-						</context>
+						<script>
+							<![CDATA[
+								if ($RemNum == 1) {
+									$RootUserNumber = $UserNumber;
+								}
+							]]>
+						</script>
+						<var name = "UserNumber" value = ""/>
 						<context id = "next">
-							<var name = "UserNumber" value = ""/>
 							<output value = "Обработка. сделать новый закказ?"/>
 							<input pattern = "* [да*|верно|ага|так|сдела*] *">
 								<output value = "Откуда едем?"/>
