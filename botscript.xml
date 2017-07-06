@@ -1,7 +1,8 @@
 <context>
+	<var name = "RootUserNumber" value = ""/>
 	<input pattern = "/start" id = "start">
 		<output value = "Нужно такси?"/>
-		<var name = "RootUserNumber" value = ""/>
+		
 		
 		<context id = "new_order">
 		
@@ -136,7 +137,6 @@
 					<!--подтверждение заказа-->
 					<output value = "Нужно такси от $GeoFrom до $GeoTo на номер $UserNumber, верно?"/>
 					<input pattern = "* [да|верно|ага|так] *">
-						<output value = "Обработка. сделать новый закказ?"/>
 						<var name = "From" value = ""/>
 						<var name = "To" value = ""/>
 						<context if = '$RemNum == "1"'>
@@ -144,6 +144,7 @@
 						</context>
 						<var name = "UserNumber" value = ""/>
 						<context>
+							<output value = "Обработка. сделать новый закказ?"/>
 							<input pattern = "* [да*|верно|ага|так|сдела*] *">
 								<output value = "Откуда едем?"/>
 								<context id = "empty_from"/>
