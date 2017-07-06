@@ -1,5 +1,5 @@
 <context>
-	<var name = "RootUserNumber" value = ""/>
+	<var name = "RootUserNumber" value = "" scope = "user"/>
 	<input pattern = "/start" id = "start">
 		<output value = "Нужно такси?"/>
 		
@@ -111,7 +111,7 @@
 						<context if = '$Err == 0'>
 							<output value = "Запомнить номер?"/>
 							<input pattern = "* (да*|верно|ага|так|запомн*) *">
-								<var name = "$RootUserNumber" value = "$UserNumber"/>
+								<var name = "RootUserNumber" value = "$UserNumber"/>
 								<context id = "done"/>
 							</input>
 							<input pattern = "*">
@@ -135,7 +135,7 @@
 					
 					<!--подтверждение заказа-->
 					<output value = "Нужно такси от $GeoFrom до $GeoTo на номер $UserNumber, верно?"/>
-					<input pattern = "* [да|верно|ага|так] *">
+					<input pattern = "* (да|верно|ага|так) *">
 						<var name = "From" value = ""/>
 						<var name = "To" value = ""/>
 						<var name = "UserNumber" value = ""/>
