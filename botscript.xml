@@ -19,7 +19,7 @@
 					<input pattern = "[от] $Text" id = "enter_from">
 						<var name = "From" value = "$Text"/>
 						
-						<!--проверка пункта направления-->
+						<!--проверка пункта отправления-->
 						<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
 							<param name = "format" value = "json"/>
 							<param name = "geocode" value = "$From"/>
@@ -35,13 +35,13 @@
 								]]>
 							</script>
 						</var>
-						<context if = "empty($GeoFrom)">
+						<context if = "empty($GeoFrom)" modal = "true">
 							<output value = "Извините, адрес не найден. Пожалуйста, повторите ввод."/>
 							<input id = "enter_from"/>
 						</context>
 						
-						<context if = "empty($To)" id = "empty_to"/>
-						<context if = "empty($UserNumber)" id = "empty_number"/>
+						<context if = "empty($To)" id = "empty_to" modal = "true"/>
+						<context if = "empty($UserNumber)" id = "empty_number" modal = "true"/>
 						<context id = "done"/>
 					</input>
 					<input pattern = "* (отмена|стоп) *">
