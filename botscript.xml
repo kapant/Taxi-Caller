@@ -7,7 +7,7 @@
 		
 		
 			<!--новый заказ-->
-			<input pattern = "* (да*|верно|ага|так|нужно|сейчас|хочу) *" id = "new_order">
+			<input pattern = "* (да*|верно|ага|так|нужн*|сейчас|хочу) *" id = "new_order">
 				<var name = "From" value = ""/>
 				<var name = "To" value = ""/>
 				<var name = "UserNumber" value = "$RootUserNumber"/>
@@ -37,8 +37,8 @@
 						</var>
 						<context if = "empty($GeoFrom)" id = "empty_from" modal = "true"/>
 						
-						<context if = "empty($To)" id = "empty_to" modal = "true"/>
-						<context if = "empty($UserNumber)" id = "empty_number" modal = "true"/>
+						<context if = "empty($To)" id = "empty_to"/>
+						<context if = "empty($UserNumber)" id = "empty_number"/>
 						<context id = "done"/>
 					</input>
 					<input pattern = "* (отмена|стоп) *">
@@ -69,10 +69,7 @@
 								]]>
 							</script>
 						</var>
-						<context if = "empty($GeoTo)">
-							<output value = "Извините, адрес не найден. Пожалуйста, повторите ввод."/>
-							<input id = "enter_to"/>
-						</context>
+						<context if = "empty($GeoTo)" modal = "true" id = "empty_to"/>
 					
 						<context if = "empty($UserNumber)" id = "empty_number"/>
 						<context id = "done"/>
@@ -108,17 +105,15 @@
 								]]>
 							</script>
 						</var>
-						<context if = '$Err == 1'>
-							<output value = "Номер введен неверно, пожалуйста, введите еще раз."/>
-							<input id = "enter_number"/>
-						</context>
+						<context if = '$Err == 1' id = "empty_number"/>
+						
 						<context if = '$Err == 0'>
 							<output value = "Запомнить номер?"/>
 							<input pattern = "* [да*|верно|ага|так|запомн*] *">
 								<var name = "RemNum" value = "1"/>
 								<context id = "done"/>
 							</input>
-							<input pattern = "*">
+							<input pattern = "* ![да*|верно|ага|так|запомн*] *">
 								<var name = "RemNum" value = "0"/>
 								<context id = "done"/>
 							</input>
@@ -153,7 +148,7 @@
 								<output value = "Откуда едем?"/>
 								<context id = "empty_from"/>
 							</input>
-							<input pattern = "*">
+							<input pattern = "* ![да*|верно|ага|так|сдела*] *">
 								<output value = "Дайте знать, когда захотите вызвать такси."/>
 								<context id = "new_order"/>
 							</input>
