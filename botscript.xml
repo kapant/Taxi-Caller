@@ -12,7 +12,6 @@
 				<var name = "From" value = ""/>
 				<var name = "To" value = ""/>
 				<var name = "UserNumber" value = "$RootUserNumber"/>
-				<var name = "RemNum" value = "0"/>
 				
 				<!--пункт отправления-->
 				<context if = "empty($From)" modal = "true" id = "empty_from">
@@ -65,7 +64,7 @@
 								if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
 									$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
 								} else {
-									"Адрес не найден";
+									"";
 								}
 								]]>
 							</script>
@@ -138,7 +137,7 @@
 					<input pattern = "* (да|верно|ага|так) *">
 						<var name = "From" value = ""/>
 						<var name = "To" value = ""/>
-						<var name = "UserNumber" value = ""/>
+						<var name = "UserNumber" value = "$RootUserNumber"/>
 						<context id = "next">
 							<output value = "Обработка. сделать новый закказ?"/>
 							<input pattern = "* (да*|верно|ага|так|сдела*) *">
