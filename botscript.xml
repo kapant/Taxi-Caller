@@ -208,7 +208,7 @@
 			</input>
 		
 			<input pattern = "(тест) *">
-				<post url = "https://taxi.yandex.ru/#index" var = "Response">
+				<post url = "https://taxi.yandex.ru/" var = "Response">
 					<param name = "addressFrom" value = "Метро Университет"/>
 					<param name = "addressTo" value = "метро Раменки"/>
 				</post>
