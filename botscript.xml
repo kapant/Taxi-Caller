@@ -161,6 +161,7 @@
 								<![CDATA[
 									$GeoFrom = $GeoFrom.toString.replace(/, /g, "%20");
 									$GeoTo = $GeoTo.toString.replace(/, /g, "%20");
+									$GeoFrom = $GeoFrom + "луоуамниспытшагп";
 								]]>
 							</script>
 							
