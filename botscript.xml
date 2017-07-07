@@ -159,8 +159,8 @@
 							
 							<script>
 								<![CDATA[
-									$GeoFrom = $GeoFrom.replace(/, /g, "%20");
-									$GeoTo = $GeoTo.replace(/, /g, "%20");
+									$GeoFrom = $GeoFrom.toString.replace(/, /g, "%20");
+									$GeoTo = $GeoTo.toString.replace(/, /g, "%20");
 								]]>
 							</script>
 							
