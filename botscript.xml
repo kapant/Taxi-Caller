@@ -103,14 +103,10 @@
 								var flag = 0;
 								$UserNumber.replace(" ", "");
 								if ($UserNumber.length <= 12 && $UserNumber.length > 10) {
-									if ($UserNumber[0] != '+' && ($UserNumber[i] < '0' || $UserNumber[i] > '9')) {
-										flag = 1;
-									} else {
-										for (var i = 1; i < $UserNumber.length; i++) {
-											if ($UserNumber[i] < '0' || $UserNumber[i] > '9') {
-												flag = 1;
-												break;
-											}
+									for (var i = 1; i < $UserNumber.length; i++) {
+										if ($UserNumber[i] < '0' || $UserNumber[i] > '9') {
+											flag = 1;
+											break;
 										}
 									}
 								} else {
