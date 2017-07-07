@@ -156,23 +156,7 @@
 						<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
 						<context id = "next">
 							
-							<post url = "https://taxi.yandex.ru/#index" var = "Response">
-								<param name = "addressFrom" value = "Метро Университет"/>
-								<param name = "addressTo" value = "метро Раменки"/>
-								<body>
-									<button class="button button_size_xl button_theme_normal button_action_demo button_width_full js-demo-order i-bem button_js_inited button_hovered_yes button_focused_yes"
-											type="button"
-											autocomplete="off"
-											data-bem-auto-init = ""
-											data-bem="{&quot;button&quot;:{}}">
-											
-											<span class="button__text">
-												Демо-заказ
-											</span>
-											
-									</button>
-								</body>
-							</post>
+							
 							
 							<output value = "Такси скоро приедет. сделать новый заказ?"/>
 							<input pattern = "* (да*|верно|ага|так|сдела*) *">
@@ -221,6 +205,13 @@
 			<input pattern = "*">
 				<output value = "Дайте знать, когда будет нужно такси."/>
 				<context id = "new_order"/>
+			</input>
+		
+			<input pattern = "(тест) *">
+				<post url = "https://taxi.yandex.ru/#index" var = "Response">
+					<param name = "addressFrom" value = "Метро Университет"/>
+					<param name = "addressTo" value = "метро Раменки"/>
+				</post>
 			</input>
 		
 		</context>
