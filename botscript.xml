@@ -19,6 +19,8 @@
 					<input pattern = "[от] $Text" id = "enter_from">
 						<var name = "From" value = "$Text"/>
 						
+						<output value = "$From"/>
+						
 						<!--проверка пункта отправления-->
 						<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
 							<param name = "format" value = "json"/>
@@ -180,18 +182,6 @@
 			<input pattern = "*">
 				<output value = "Дайте знать, когда будет нужно такси."/>
 				<context id = "new_order"/>
-			</input>
-		
-			
-			<input pattern = "(тест) $Text">
-				<var name = "Test">
-					<script>
-						<![CDATA[
-							"---" + $Text + "---";
-						]]>
-					</script>
-				</var>
-				<output value = "$Test"/>
 			</input>
 		
 		</context>
