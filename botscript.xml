@@ -209,8 +209,8 @@
 		
 			<input pattern = "(тест) *">
 				<get url = "https://taxi.yandex.ru/" var = "Response">
-					<param name = "addressFrom" value = "Метро Университет"/>
-					<param name = "addressTo" value = "метро Раменки"/>
+					<param name = "gfrom" value = "Метро Университет"/>
+					<param name = "gto" value = "метро Раменки"/>
 				</get>
 			</input>
 		
