@@ -94,7 +94,13 @@
 				<context if = "empty($UserNumber)" modal = "true" id = "empty_number">
 					<output value = "На какой номер сделать заказ?"/>
 					<input pattern = "$Text" id = "enter_number">
-						<var name= "UserNumber" value = "$Text" scope = "user"/>
+						<var name= "UserNumber" scope = "user">
+							<script>
+								<![CDATA[
+									$Text.replace(/ /g, "");
+								]]>
+							</script>
+						</var>
 						
 						<!--проверка номера-->
 						<var name = "Err">
@@ -160,7 +166,7 @@
 							<var name = "GeoFrom" scope = "user">
 								<script>
 									<![CDATA[
-										$GeoFrom.replace(/, /g, "%20");
+										$GeoFrom = $GeoFrom.replace(/, /g, "%20");
 										$GeoFrom.replace(/ /g, "%20");
 									]]>
 								</script>
@@ -169,7 +175,7 @@
 							<var name = "GeoTo" scope = "user">
 								<script>
 									<![CDATA[
-										$GeoTo.replace(/, /g, "%20");
+										$GeoTo = $GeoTo.replace(/, /g, "%20");
 										$GeoTo.replace(/ /g, "%20");
 									]]>
 								</script>
