@@ -157,7 +157,7 @@
 						<context id = "next">							
 							
 							
-							<get value = 'https://taxi.yandex.ru/' var = "Place">
+							<get value = "https://taxi.yandex.ru/" var = "Place">
 								<param name = "gfrom" value = "$GeoFrom"/>
 								<param name = "gto" value = "$GeoTo"/>
 								<param name = "phone" value = "$UserNumber"/>
