@@ -8,11 +8,11 @@
 		
 		<context id = "new_order">	
 		
-			<var name = "From" value = "" scope = "context"/>
+			<var name = "From" value = "" scope = "user"/>
 			<var name = "To" value = "" scope = "user"/>
-			<var name = "UserNumber" value = "$RootUserNumber" scope = "context"/>
-			<var name = "GeoFrom" value = "" scope = "context"/>
-			<var name = "GeoTo" value = "" scope = "context"/>
+			<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
+			<var name = "GeoFrom" value = "" scope = "user"/>
+			<var name = "GeoTo" value = "" scope = "user"/>
 			
 			<!--новый заказ-->
 			<input pattern = "* (да*|верно|ага|так|нужн*|сейчас|хочу) *" id = "new_order">
@@ -46,6 +46,9 @@
 						<context id = "done"/>
 					</input>
 					<input pattern = "* (отмена|стоп) *">
+						<var name = "From" value = "" scope = "user"/>
+						<var name = "To" value = "" scope = "user"/>
+						<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
 						<output value = "Заказ отменен. Дайте знать, когда захотите сделать новый."/>
 						<context id = "new_order"/>
 					</input>
@@ -79,6 +82,9 @@
 						<context id = "done"/>
 					</input>
 					<input pattern = "* (отмена|стоп) *">
+						<var name = "From" value = "" scope = "user"/>
+						<var name = "To" value = "" scope = "user"/>
+						<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
 						<output value = "Заказ отменен. Дайте знать, когда захотите сделать новый."/>
 						<context id = "new_order"/>
 					</input>
@@ -121,6 +127,9 @@
 								<context id = "done"/>
 							</input>
 							<input pattern = "* (отмена|стоп) *">
+								<var name = "From" value = "" scope = "user"/>
+								<var name = "To" value = "" scope = "user"/>
+								<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
 								<output value = "Заказ отменен. Дайте знать, когда захотите сделать новый."/>
 								<context id = "new_order"/>
 							</input>
@@ -128,6 +137,9 @@
 						
 					</input>
 					<input pattern = "* (отмена|стоп) *">
+						<var name = "From" value = "" scope = "user"/>
+						<var name = "To" value = "" scope = "user"/>
+						<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
 						<output value = "Заказ отменен. Дайте знать, когда захотите сделать новый."/>
 						<context id = "new_order"/>
 					</input>
@@ -143,7 +155,26 @@
 						<var name = "To" value = "" scope = "user"/>
 						<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
 						<context id = "next">
-							<output value = "Обработка. сделать новый закказ?"/>
+							
+							<post url = "https://taxi.yandex.ru/#index" var = "Response">
+								<param name = "addressFrom" value = "Метро Университет"/>
+								<param name = "addressTo" value = "метро Раменки"/>
+								<body>
+									<button class="button button_size_xl button_theme_normal button_action_demo button_width_full js-demo-order i-bem button_js_inited button_hovered_yes button_focused_yes"
+											type="button"
+											autocomplete="off"
+											data-bem-auto-init
+											data-bem="{&quot;button&quot;:{}}">
+											
+											<span class="button__text">
+												Демо-заказ
+											</span>
+											
+									</button>
+								</body>
+							</post>
+							
+							<output value = "Такси скоро приедет. сделать новый заказ?"/>
 							<input pattern = "* (да*|верно|ага|так|сдела*) *">
 								<output value = "Откуда едем?"/>
 								<context id = "empty_from"/>
@@ -158,6 +189,9 @@
 						<output value = "Что именно неверно?"/>
 						<context>
 							<input pattern = "* (отмена|стоп) *">
+								<var name = "From" value = "" scope = "user"/>
+								<var name = "To" value = "" scope = "user"/>
+								<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
 								<output value = "Заказ отменен. Дайте знать, когда захотите сделать новый."/>
 								<context id = "new_order"/>
 							</input>
@@ -169,6 +203,9 @@
 						</context>
 					</input>
 					<input pattern = "* (отмена|стоп) *">
+						<var name = "From" value = "" scope = "user"/>
+						<var name = "To" value = "" scope = "user"/>
+						<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
 						<output value = "Заказ отменен. Дайте знать, когда захотите сделать новый."/>
 						<context id = "new_order"/>
 					</input>
