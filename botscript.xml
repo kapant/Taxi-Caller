@@ -184,7 +184,13 @@
 		
 			
 			<input pattern = "(тест) $Text">
-				<var name = "Test" value = "$Text"/>
+				<var name = "Test">
+					<script>
+						<![CDATA[
+							"---" + $Text + "---";
+						]]>
+					</script>
+				</var>
 				<output value = "$Test"/>
 			</input>
 		
