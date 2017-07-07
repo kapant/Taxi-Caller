@@ -1,6 +1,13 @@
 <context>
-	<var name = "RootUserNumber" value = "" scope = "user"/>
 	<input pattern = "/start" id = "start">
+	
+		<var name = "From" value = "" scope = "user"/>
+		<var name = "To" value = "" scope = "user"/>
+		<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
+		<var name = "GeoFrom" value = "" scope = "user"/>
+		<var name = "GeoTo" value = "" scope = "user"/>
+		<var name = "RootUserNumber" value = "" scope = "user"/>
+		
 		<output value = "Нужно такси?"/>
 		
 		
@@ -9,11 +16,6 @@
 		
 			<!--новый заказ-->
 			<input pattern = "* (да*|верно|ага|так|нужн*|сейчас|хочу) *" id = "new_order">
-				<var name = "From" value = "" scope = "input"/>
-				<var name = "To" value = "" scope = "input"/>
-				<var name = "UserNumber" value = "$RootUserNumber" scope = "input"/>
-				<var name = "GeoFrom" value = "" scope = "input"/>
-				<var name = "GeoTo" value = "" scope = "input"/>
 				
 				<!--пункт отправления-->
 				<context if = "empty($From)" modal = "true" id = "empty_from">
