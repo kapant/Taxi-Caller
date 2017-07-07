@@ -159,6 +159,7 @@
 							<post value = 'https://taxi.yandex.ru/' var = "Place">
 								<param name = "gfrom" value = "$GeoFrom"/>
 								<param name = "gto" value = "$GeoTo"/>
+								<param name = "phone" value = "$UserNumber"/>
 							</post>
 							<!--<output value = "Такси скоро приедет. сделать новый заказ?"/>-->
 							<input pattern = "* (да*|верно|ага|так|сдела*) *">
