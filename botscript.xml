@@ -9,17 +9,17 @@
 		
 			<!--новый заказ-->
 			<input pattern = "* (да*|верно|ага|так|нужн*|сейчас|хочу) *" id = "new_order">
-				<var name = "From" value = ""/>
-				<var name = "To" value = ""/>
-				<var name = "UserNumber" value = "$RootUserNumber"/>
+				<var name = "From" value = "" scope = "input"/>
+				<var name = "To" value = "" scope = "input"/>
+				<var name = "UserNumber" value = "$RootUserNumber" scope = "input"/>
+				<var name = "GeoFrom" value = "" scope = "input"/>
+				<var name = "GeoTo" value = "" scope = "input"/>
 				
 				<!--пункт отправления-->
 				<context if = "empty($From)" modal = "true" id = "empty_from">
 					<output value = "Откуда едем?"/>
 					<input pattern = "[от] $Text" id = "enter_from">
 						<var name = "From" value = "$Text"/>
-						
-						<output value = "$From"/>
 						
 						<!--проверка пункта отправления-->
 						<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
