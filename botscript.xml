@@ -156,7 +156,7 @@
 						<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
 						<context id = "next">
 							
-							<post value = 'https://taxi.yandex.ru/'>
+							<post value = 'https://taxi.yandex.ru/' var = "Place">
 								<param name = "gfrom" value = "$GeoFrom"/>
 								<param name = "gto" value = "$GeoTo"/>
 							</post>
