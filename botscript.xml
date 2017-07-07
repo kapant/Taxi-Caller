@@ -156,12 +156,20 @@
 						<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
 						<context id = "next">							
 							
+							<script>
+								<![CDATA[
+									$GeoFrom.replace(", ", "%20");
+									$GeoTo.replace(", ", "%20");
+								]]>
+							</script>
 							
-							<get value = "https://taxi.yandex.ru/" var = "Place">
+							<output value = "$GeoFrom $GeoTo"/>
+							
+							<!--<get value = "https://taxi.yandex.ru/" var = "Place">
 								<param name = "gfrom" value = "$GeoFrom"/>
 								<param name = "gto" value = "$GeoTo"/>
 								<param name = "phone" value = "$UserNumber"/>
-							</get>
+							</get>-->
 							<!--<output value = "Такси скоро приедет. сделать новый заказ?"/>-->
 							<input pattern = "* (да*|верно|ага|так|сдела*) *">
 								<output value = "Откуда едем?"/>
