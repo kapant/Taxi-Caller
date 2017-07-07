@@ -182,10 +182,12 @@
 				<context id = "new_order"/>
 			</input>
 		
+			
+			<input pattern = "(тест) $Text">
+				<var name = "Test" value = "$Text"/>
+				<output value = "$Test"/>
+			</input>
+		
 		</context>
-	</input>
-	<input pattern = "$Text">
-		<var name = "Test" value = "$Text"/>
-		<output value = "$Test"/>
 	</input>
 </context>
