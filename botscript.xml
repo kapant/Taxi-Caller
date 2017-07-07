@@ -163,7 +163,7 @@
 									<button class="button button_size_xl button_theme_normal button_action_demo button_width_full js-demo-order i-bem button_js_inited button_hovered_yes button_focused_yes"
 											type="button"
 											autocomplete="off"
-											data-bem-auto-init
+											data-bem-auto-init = ""
 											data-bem="{&quot;button&quot;:{}}">
 											
 											<span class="button__text">
