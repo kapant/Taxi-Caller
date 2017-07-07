@@ -158,8 +158,8 @@
 							
 							<script>
 								<![CDATA[
-									$GeoFrom.replace(", ", %20);
-									$GeoFrom.replace(", ", %20);
+									$GeoFrom.replace(", ", "%20");
+									$GeoFrom.replace(", ", "%20");
 								]]>
 							</script>
 							
