@@ -21,24 +21,26 @@
 				<context if = "empty($From)" modal = "true" id = "empty_from">
 					<output value = "Откуда едем?"/>
 					<input pattern = "[от] $Text" id = "enter_from">
-						<var name = "From" value = "$Text"/>
+						<script>
+							<![CDATA[
+								$From = $Text;
+							]]>
+						</script>
 						
 						<!--проверка пункта отправления-->
 						<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
 							<param name = "format" value = "json"/>
 							<param name = "geocode" value = "$From"/>
 						</get>
-						<var name = "GeoFrom">
-							<script>
-								<![CDATA[
-								if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
-									$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
-								} else {
-									"";
-								}
-								]]>
-							</script>
-						</var>
+						<script>
+							<![CDATA[
+							if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
+								$GeoFrom = $Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+							} else {
+								$GeoFrom = "";
+							}
+							]]>
+						</script>
 						<context if = "empty($GeoFrom)" id = "empty_from" modal = "true"/>
 						
 						<context if = "empty($To)" id = "empty_to"/>
@@ -55,24 +57,26 @@
 				<context if = "empty($To)" modal = "true" id = "empty_to">
 					<output value = "Куда едем?"/>
 					<input pattern = "[к|до|на] $Text" id = "enter_to">
-						<var name = "To" value = "$Text"/>
+						<script>
+							<![CDATA[
+								$To = $Text;
+							]]>
+						</script>
 						
 						<!--проверка пункта назначения-->
 						<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
 							<param name = "format" value = "json"/>
 							<param name = "geocode" value = "$To"/>
 						</get>
-						<var name = "GeoTo">
-							<script>
-								<![CDATA[
-								if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
-									$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
-								} else {
-									"";
-								}
-								]]>
-							</script>
-						</var>
+						<script>
+							<![CDATA[
+							if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
+								$GeoTo = $Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+							} else {
+								$GeoTo = "";
+							}
+							]]>
+						</script>
 						<context if = "empty($GeoTo)" modal = "true" id = "empty_to"/>
 					
 						<context if = "empty($UserNumber)" id = "empty_number"/>
