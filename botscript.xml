@@ -101,6 +101,7 @@
 							<script>
 								<![CDATA[
 								var flag = 0;
+								$UserNumber = $UserNumber.replace(/ /g, "");
 								if ($UserNumber.length <= 12 && $UserNumber.length > 10) {
 									for (var i = 2; i < $UserNumber.length; i++) {
 										if ($UserNumber[i] < '0' || $UserNumber[i] > '9') {
@@ -158,8 +159,8 @@
 							
 							<script>
 								<![CDATA[
-									$GeoFrom.replace(", ", "%20");
-									$GeoTo.replace(", ", "%20");
+									$GeoFrom = $GeoFrom.replace(/, /g, "%20");
+									$GeoTo = $GeoTo.replace(/, /g, "%20");
 								]]>
 							</script>
 							
