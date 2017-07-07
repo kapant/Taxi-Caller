@@ -1,19 +1,19 @@
 <context>
 	<input pattern = "/start" id = "start">
-	
-		<var name = "From" value = "" scope = "user"/>
-		<var name = "To" value = "" scope = "user"/>
-		<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
-		<var name = "GeoFrom" value = "" scope = "user"/>
-		<var name = "GeoTo" value = "" scope = "user"/>
+
 		<var name = "RootUserNumber" value = "" scope = "user"/>
 		
 		<output value = "Нужно такси?"/>
 		
 		
-		<context id = "new_order">
+		<context id = "new_order">	
 		
-		
+			<var name = "From" value = "" scope = "context"/>
+			<var name = "To" value = "" scope = "user"/>
+			<var name = "UserNumber" value = "$RootUserNumber" scope = "context"/>
+			<var name = "GeoFrom" value = "" scope = "context"/>
+			<var name = "GeoTo" value = "" scope = "context"/>
+			
 			<!--новый заказ-->
 			<input pattern = "* (да*|верно|ага|так|нужн*|сейчас|хочу) *" id = "new_order">
 				
@@ -21,26 +21,24 @@
 				<context if = "empty($From)" modal = "true" id = "empty_from">
 					<output value = "Откуда едем?"/>
 					<input pattern = "[от] $Text" id = "enter_from">
-						<script>
-							<![CDATA[
-								$From = $Text;
-							]]>
-						</script>
+						<var name = "From" value = "$Text" scope = "user"/>
 						
 						<!--проверка пункта отправления-->
 						<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
 							<param name = "format" value = "json"/>
 							<param name = "geocode" value = "$From"/>
 						</get>
-						<script>
-							<![CDATA[
-							if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
-								$GeoFrom = $Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
-							} else {
-								$GeoFrom = "";
-							}
-							]]>
-						</script>
+						<var name = "GeoFrom" scope = "user">
+							<script>
+								<![CDATA[
+								if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
+									$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+								} else {
+									"";
+								}
+								]]>
+							</script>
+						</var>
 						<context if = "empty($GeoFrom)" id = "empty_from" modal = "true"/>
 						
 						<context if = "empty($To)" id = "empty_to"/>
@@ -57,26 +55,24 @@
 				<context if = "empty($To)" modal = "true" id = "empty_to">
 					<output value = "Куда едем?"/>
 					<input pattern = "[к|до|на] $Text" id = "enter_to">
-						<script>
-							<![CDATA[
-								$To = $Text;
-							]]>
-						</script>
+						<var name = "To" value = "$Text"  scope = "user"/>
 						
 						<!--проверка пункта назначения-->
 						<get url = "https://geocode-maps.yandex.ru/1.x/" var = "Place">
 							<param name = "format" value = "json"/>
 							<param name = "geocode" value = "$To"/>
 						</get>
-						<script>
-							<![CDATA[
-							if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
-								$GeoTo = $Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
-							} else {
-								$GeoTo = "";
-							}
-							]]>
-						</script>
+						<var name = "GeoTo"  scope = "user">
+							<script>
+								<![CDATA[
+								if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
+									$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+								} else {
+									"";
+								}
+								]]>
+							</script>
+						</var>
 						<context if = "empty($GeoTo)" modal = "true" id = "empty_to"/>
 					
 						<context if = "empty($UserNumber)" id = "empty_number"/>
@@ -92,7 +88,7 @@
 				<context if = "empty($UserNumber)" modal = "true" id = "empty_number">
 					<output value = "На какой номер сделать заказ?"/>
 					<input pattern = "$Text" id = "enter_number">
-						<var name= "UserNumber" value = "$Text"/>
+						<var name= "UserNumber" value = "$Text" scope = "user"/>
 						
 						<!--проверка номера-->
 						<var name = "Err">
@@ -118,7 +114,7 @@
 						<context if = '$Err == 0'>
 							<output value = "Запомнить номер?"/>
 							<input pattern = "* (да*|верно|ага|так|запомн*) *">
-								<var name = "RootUserNumber" value = "$UserNumber"/>
+								<var name = "RootUserNumber" value = "$UserNumber" scope = "user"/>
 								<context id = "done"/>
 							</input>
 							<input pattern = "*">
@@ -143,9 +139,9 @@
 					<!--подтверждение заказа-->
 					<output value = "Нужно такси от $GeoFrom до $GeoTo на номер $UserNumber, верно?"/>
 					<input pattern = "* (да|верно|ага|так) *">
-						<var name = "From" value = ""/>
-						<var name = "To" value = ""/>
-						<var name = "UserNumber" value = "$RootUserNumber"/>
+						<var name = "From" value = "" scope = "user"/>
+						<var name = "To" value = "" scope = "user"/>
+						<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
 						<context id = "next">
 							<output value = "Обработка. сделать новый закказ?"/>
 							<input pattern = "* (да*|верно|ага|так|сдела*) *">
