@@ -109,7 +109,7 @@
 								var flag = 0;
 								$UserNumber = $UserNumber.replace(/ /g, "");
 								if ($UserNumber.length <= 12 && $UserNumber.length > 10) {
-									for (var i = 2; i < $UserNumber.length; i++) {
+									for (var i = 1; i < $UserNumber.length; i++) {
 										if ($UserNumber[i] < '0' || $UserNumber[i] > '9') {
 											flag = 1;
 											break;
@@ -183,11 +183,11 @@
 							
 							<output value = "$GeoFrom $GeoTo"/>
 							
-							<!--<get value = "https://taxi.yandex.ru/" var = "Place">
+							<get value = "https://taxi.yandex.ru/" var = "Place">
 								<param name = "gfrom" value = "$GeoFrom"/>
 								<param name = "gto" value = "$GeoTo"/>
 								<param name = "phone" value = "$UserNumber"/>
-							</get>-->
+							</get>
 							<!--<output value = "Такси скоро приедет. сделать новый заказ?"/>-->
 							<input pattern = "* (да*|верно|ага|так|сдела*) *">
 								<output value = "Откуда едем?"/>
