@@ -29,6 +29,7 @@
 								<![CDATA[
 								if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
 									$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+									"Адрес получен";
 								} else {
 									"";
 								}
@@ -63,6 +64,7 @@
 								<![CDATA[
 								if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
 									$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+									"Адрес получен";
 								} else {
 									"";
 								}
