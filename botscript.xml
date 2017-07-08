@@ -166,7 +166,7 @@
 							<var name = "GeoFrom" scope = "user">
 								<script>
 									<![CDATA[
-										$GeoFrom.replace(/ /g, "%20");
+										$GeoFrom = $GeoFrom.replace(/ /g, "%20");
 									]]>
 								</script>
 							</var>
@@ -174,7 +174,7 @@
 							<var name = "GeoTo" scope = "user">
 								<script>
 									<![CDATA[
-										$GeoTo.replace(/ /g, "%20");
+										$GeoTo = $GeoTo.replace(/ /g, "%20");
 									]]>
 								</script>
 							</var>
