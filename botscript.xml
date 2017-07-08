@@ -163,11 +163,16 @@
 						<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
 						<context id = "next">	
 							
-							<post value = "https://taxi.yandex.ru/" var = "Place">
-								<param name = "gfrom" value = "$GeoFrom"/>
-								<param name = "gto" value = "$GeoTo"/>
-								<param name = "phone" value = "$UserNumber"/>
-							</post>
+							<output>
+								
+								<post value = "https://taxi.yandex.ru/">
+									<param name = "gfrom" value = "$GeoFrom"/>
+									<param name = "gto" value = "$GeoTo"/>
+									<param name = "phone" value = "$UserNumber"/>
+								</post>
+							
+							</output>
+							
 							<!--<output value = "Такси скоро приедет. сделать новый заказ?"/>-->
 							<input pattern = "* (да*|верно|ага|так|сдела*) *">
 								<output value = "Откуда едем?"/>
