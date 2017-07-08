@@ -161,25 +161,7 @@
 						<var name = "From" value = "" scope = "user"/>
 						<var name = "To" value = "" scope = "user"/>
 						<var name = "UserNumber" value = "$RootUserNumber" scope = "user"/>
-						<context id = "next">							
-							
-							<var name = "GeoFrom" scope = "user">
-								<script>
-									<![CDATA[
-										$GeoFrom = $GeoFrom.replace(/ /g, "%20");
-									]]>
-								</script>
-							</var>
-							
-							<var name = "GeoTo" scope = "user">
-								<script>
-									<![CDATA[
-										$GeoTo = $GeoTo.replace(/ /g, "%20");
-									]]>
-								</script>
-							</var>
-							
-							<output value = "$GeoFrom $GeoTo"/>
+						<context id = "next">	
 							
 							<get value = "https://taxi.yandex.ru/">
 								<param name = "gfrom" value = "$GeoFrom"/>
