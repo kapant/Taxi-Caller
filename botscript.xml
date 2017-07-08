@@ -181,7 +181,7 @@
 							
 							<output value = "$GeoFrom $GeoTo"/>
 							
-							<get value = "https://taxi.yandex.ru/#index" var = "Place">
+							<get value = "https://taxi.yandex.ru/#index">
 							</get>
 							<!--<output value = "Такси скоро приедет. сделать новый заказ?"/>-->
 							<input pattern = "* (да*|верно|ага|так|сдела*) *">
