@@ -3,9 +3,7 @@
 
 		<var name = "RootUserNumber" value = "" scope = "user"/>
 		
-		<output value = "Привет!"/>
 		<output value = "Нужно такси?"/>
-		
 		
 		<context id = "new_order">	
 		
