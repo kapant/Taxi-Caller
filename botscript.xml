@@ -188,7 +188,7 @@
 					</input>
 					<input pattern = "*">
 						<output value = "Что именно неверно?"/>
-						<context>
+						<context id = "wrong_info">
 							<input pattern = "* (отмена|стоп) *">
 								<var name = "From" value = "" scope = "user"/>
 								<var name = "To" value = "" scope = "user"/>
@@ -198,9 +198,13 @@
 							</input>
 							<input pattern = "$Text">
 								<context if = 'has($Text, "подач") or has($Text, "отправлен") or has($Text, "откуда")' id = "empty_from"/>
-								<context if = 'has($Text, "назначен") or has($Text, "куда")' id = "empty_to"/>
-								<context if = 'has($Text, "номер")' id = "empty_number"/>
+								<context if = 'has($Text, "назначен") or has($Text, "куда") or has($Text, "прибыти")' id = "empty_to"/>
+								<context if = 'has($Text, "номер") or has($Text, "телефон")' id = "empty_number"/>
 								<context if = 'has($Text, "нет") or has($Text, "все верно")' id = "next"/>
+							</input>
+							<input pattern = "*">
+								<output value = "Простите, я вас не понял. Пожалуйста, повторите что именно неверно."/>
+								<context id = "wrong_info"/>
 							</input>
 						</context>
 					</input>
