@@ -31,7 +31,11 @@
 							<script>
 								<![CDATA[
 								if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
-									$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+									var i = 0;
+									while ($Place.response.GeoObjectCollection.featureMember[i].GeoObject.metaDataProperty.GeocoderMetaData.Address.country_code != "RU") {
+										i++;
+									}
+									$Place.response.GeoObjectCollection.featureMember[i].GeoObject.metaDataProperty.GeocoderMetaData.Address.formatted;
 								} else {
 									"";
 								}
@@ -68,7 +72,11 @@
 							<script>
 								<![CDATA[
 								if ($Place.response.GeoObjectCollection.metaDataProperty.GeocoderResponseMetaData.found != 0) {
-									$Place.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
+									var i = 0;
+									while ($Place.response.GeoObjectCollection.featureMember[i].GeoObject.metaDataProperty.GeocoderMetaData.Address.country_code != "RU") {
+										i++;
+									}
+									$Place.response.GeoObjectCollection.featureMember[i].GeoObject.metaDataProperty.GeocoderMetaData.Address.formatted;
 								} else {
 									"";
 								}
