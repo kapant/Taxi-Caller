@@ -15,7 +15,7 @@
 			<var name = "GeoTo" value = "" scope = "user"/>
 			
 			<!--новый заказ-->
-			<input pattern = "{[(от|с) $From::Text] [(до|к) $To::Text] [* $UserNumber::Number]}" id = "new_order">
+			<input pattern = "{[(от|с) $From::Text] [(до|к) $To::Text] [* $UserNumber::Number *]}" id = "new_order">
 				
 				<!--пункт отправления-->
 				<context if = "empty($From)" modal = "true" id = "empty_from">
