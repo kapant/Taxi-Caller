@@ -2,8 +2,9 @@
 	<input pattern = "/start" id = "start">
 
 		<var name = "RootUserNumber" value = "" scope = "user"/>
+		<var name = "DefaultCity" value = "Москва" scope = "user">
 		
-		<output value = "Нужно такси?"/>
+		<output value = "Каким маршрутом поедем и на какой номер сделать заказ?"/>
 		
 		<context id = "new_order">	
 		
@@ -14,7 +15,7 @@
 			<var name = "GeoTo" value = "" scope = "user"/>
 			
 			<!--новый заказ-->
-			<input pattern = "* (да*|верно|ага|так|нужн*|сейчас|хочу) *" id = "new_order">
+			<input pattern = "{[(от|с) $From::Text] [(до|к) $To::Text] [* $UserNumber::Number]}" id = "new_order">
 				
 				<!--пункт отправления-->
 				<context if = "empty($From)" modal = "true" id = "empty_from">
